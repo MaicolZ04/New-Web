@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM6g0g5z5e5e5e5e5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
 </head>
 <body>
-
     <section class="header-section">
         <div class="header-container">
 
@@ -51,6 +50,9 @@
         </div>
     </section>
     <section class="video-section">
+        <div class="particles-container">
+            <div id="particles-js"></div>
+        </div>
         <div class="content-left">
             <h2 class="section-title">Título de la Sección</h2>
             <p class="section-text">
@@ -62,11 +64,38 @@
             <iframe class="video-frame" src="https://www.youtube.com/embed/nToqFD_in1g?autoplay=1&si=mQIzN7spZPXEGuGb" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </section>
+  <section class="servicios-container">
+    <h2 class="titulo-principal">Nuestros Servicios</h2>
+    <p class="descripcion">Breve descripción de nuestros servicios.</p>
+    
+    <div class="cards-container">
 
-    <script src="app.js"></script>
-</body>
-</html>
+      <div class="card-servicio">
+        <img src="img/servicios1.webp" alt="Servicio1">
+        <h3>Externalización de Proceso de Conocimiento</h3>
+        <p>Tercerizamos servicios estratégicos de alto valor, especializados en conocimiento y recurso humano.</p>
+        <a href="#" class="btn-vermas">Ver más</a>
+      </div>
 
+      <div class="card-servicio">
+        <img src="img/servicios2.webp" alt="Servicio2">
+        <h3>Externalización de Proceso de Negocio</h3>
+        <p>Ofrecemos externalización de procesos no estratégicos “No Core” incluyendo tareas operativas y tecnológicas.</p>
+        <a href="#" class="btn-vermas">Ver más</a>
+      </div>
+
+      <div class="card-servicio">
+        <img src="img/servicios3.webp" alt="Servicio3">
+        <h3>Externalización de Tecnologías de Información</h3>
+        <p>Automatizamos procesos con herramientas tecnológicas emergentes que permiten mayor eficiencia y calidad.</p>
+        <a href="#" class="btn-vermas">Ver más</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
