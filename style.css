@@ -1,0 +1,128 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.header {
+    background-color: #f9f9f9; /* Ejemplo de color de fondo */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-3 {
+    width: 33.33%;
+}
+
+.col-6 {
+    width: 66.66%;
+}
+
+.logo img {
+    max-height: 50px; /* Ajusta la altura del logo */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+.main-nav a.active {
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    display: none; /* Ensure the dropdown is hidden by default */
+    position: absolute;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-menu li {
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.dropdown-menu a {
+    color: #333;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #333;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .col-3, .col-6 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #f9f9f9;
+        position: absolute;
+        top: 100%;
+        left: 0;
+    }
+
+    .main-nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        text-align: right;
+    }
+}
