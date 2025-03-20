@@ -1,25 +1,25 @@
 // Datos del menú (simulando una base de datos o API)
 const menuData = [
-    { name: 'INICIO', url: 'https://www.americankpo.com/' },
-    { name: 'NOSOTROS', url: 'https://www.americankpo.com/nosotros/' },
+    { name: 'INICIO', url: 'https://maicolz04.github.io/New-Web/' },
+    { name: 'NOSOTROS', url: '#' },
     { 
         name: 'SERVICIOS', 
-        url: 'https://www.americankpo.com/servicios/',
+        url: '#',
         submenu: [
-            { name: 'Auditoría Médica', url: 'https://www.americankpo.com/auditoria-medica/' },
-            { name: 'Cuentas Médicas', url: 'https://www.americankpo.com/cuentas-medica/' },
-            { name: 'Gestión Recobros', url: 'https://www.americankpo.com/gestion-recobros/' },
+            { name: 'Auditoría Médica', url: '#' },
+            { name: 'Cuentas Médicas', url: '#' },
+            { name: 'Gestión Recobros', url: '#' },
         ]
     },
-    { name: 'CLIENTES', url: 'https://www.americankpo.com/clientes/' },
-    { name: 'CONTACTO', url: 'https://www.americankpo.com/contacto/' }
+    { name: 'CLIENTES', url: '#' },
+    { name: 'CONTACTO', url: '#' }
 ];
 
 // Datos de redes sociales (simulando una base de datos o API)
 const socialLinks = [
-    { name: 'Facebook', url: 'https://www.facebook.com/AmericanKPOLatam/', icon: 'facebook' },
-    { name: 'Twitter', url: 'https://twitter.com/american_kpo', icon: 'twitter' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/american-kpo/', icon: 'linkedin' }
+    { name: 'Facebook', url: 'https://www.facebook.com/', icon: 'facebook' },
+    { name: 'Twitter', url: 'https://twitter.com/', icon: 'twitter' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/', icon: 'linkedin' }
 ];
 
 // Cargar el menú dinámicamente
