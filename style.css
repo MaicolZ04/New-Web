@@ -1,128 +1,134 @@
+/* Estilos generales */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.header {
-    background-color: #f9f9f9; /* Ejemplo de color de fondo */
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1e3e3;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.row {
+.header-container {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.header-column {
+    display: flex;
     align-items: center;
 }
 
-.col-3 {
-    width: 33.33%;
+.header-column-image .image-container {
+    max-width: 150px;
 }
 
-.col-6 {
-    width: 66.66%;
+.header-logo {
+    width: 100%;
+    height: auto;
 }
 
-.logo img {
-    max-height: 50px; /* Ajusta la altura del logo */
+.nav-container {
+    margin-left: 50px;
 }
 
-.main-nav ul {
+.navigation .nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
-.main-nav li {
-    margin: 0 15px;
-    position: relative;
+.navigation .nav-list .nav-item {
+    margin: 0 20px;
 }
 
-.main-nav a {
+.navigation .nav-list .nav-link {
     text-decoration: none;
     color: #333;
-    padding: 5px 10px;
-}
-
-.main-nav a.active {
     font-weight: bold;
 }
 
-.dropdown-menu {
-    display: none; /* Ensure the dropdown is hidden by default */
+.navigation .nav-list .submenu-list {
+    display: none;
     position: absolute;
     background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     list-style: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    margin-top: 10px;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block; /* Show dropdown on hover */
+.social-icons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover .social-icon-img {
+    transform: scale(1.1); /* Efecto hover para hacer el icono más grande */
+  }
+
+/* Estilos de submenu */
+.nav-item:hover .submenu-list {
+    display: block;
 }
 
-.dropdown-menu li {
-    padding: 10px 15px;
-    white-space: nowrap;
+/* Estilo para la sección */
+.video-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f4f4f4; /* Color de fondo de la sección */
 }
 
-.dropdown-menu a {
-    color: #333;
+/* Estilo para la parte izquierda */
+.content-left {
+    width: 45%; /* Toma el 45% del ancho */
+    text-align: left;
 }
 
-.social-icons a {
-    margin: 0 5px;
-    font-size: 20px;
-    color: #333;
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+.section-text {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .row {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Estilo para la parte derecha */
+.content-right {
+    width: 50%; /* Toma el 50% del ancho */
+    text-align: center;
+}
 
-    .col-3, .col-6 {
-        width: 100%;
-        text-align: center;
-    }
-
-    .main-nav ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        background-color: #f9f9f9;
-        position: absolute;
-        top: 100%;
-        left: 0;
-    }
-
-    .main-nav ul.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-        text-align: right;
-    }
+.video-frame {
+    width: 60%; /* Reduce el ancho a un 70% del contenedor */
+    height: 315px; /* Altura estándar de un video de YouTube */
+    border-radius: 8px;
 }
