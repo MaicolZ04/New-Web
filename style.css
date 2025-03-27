@@ -210,28 +210,22 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-<<<<<<< HEAD
     background: none;
     z-index: -1;
     pointer-events: none;
-=======
     z-index: 0;
->>>>>>> 6dbaa5423cda4c842a463b4369c981cc5795b9b3
   }
 
 #particles-js {
     width: 100%;
     height: 100%;
   }
-<<<<<<< HEAD
-=======
 
 .video-section .content-left,
 .video-section .content-right {
   position: relative;
   z-index: 1;
 }
->>>>>>> 6dbaa5423cda4c842a463b4369c981cc5795b9b3
   
   .servicios-container {
     position: relative;
@@ -306,7 +300,6 @@ p {
   .btn-vermas:hover {
     background-color: #003d80;
   }
-<<<<<<< HEAD
 
   .preProductos {
     position: relative;
@@ -579,5 +572,3 @@ p {
 body.menu-open .btn-empezar-mobile {
   display: none;
 }
-=======
->>>>>>> 6dbaa5423cda4c842a463b4369c981cc5795b9b3
