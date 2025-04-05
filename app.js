@@ -1,3 +1,5 @@
+//menu toggle para moviles
+
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
@@ -9,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
   });
   
-  // Cerrar menú al hacer clic en un enlace
+  // Cerrar menú al hacer clic en un enlace (menu toggle para moviles)
   document.querySelectorAll('.nav a, .nav .btn-empezar').forEach(item => {
       item.addEventListener('click', () => {
           nav.classList.remove('active');
@@ -18,11 +20,45 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+// Ventana emergente del video
+const modal = document.querySelector('.modal'); // Selecciona el modal
+const openModalButton = document.querySelector('#openVideoBtn'); // Botón para abrir el modal
+const closeModalButton = document.querySelector('.close-modal'); // Botón para cerrar el modal
+const videoFrame = document.querySelector('.video-frame'); // Selecciona el iframe del video
+const originalSrc = videoFrame.src; // Guarda la URL original del video
+
+// Abrir modal
+openModalButton.addEventListener('click', () => {
+  modal.classList.add('show'); // Agrega la clase para mostrar el modal
+  videoFrame.src = originalSrc; // Restaura el src del iframe
+  document.body.style.overflow = 'hidden'; // Desactiva el scroll de la página
+});
+
+// Cerrar modal
+closeModalButton.addEventListener('click', () => {
+  modal.classList.remove('show'); // Elimina la clase para ocultar el modal
+  videoFrame.src = ''; // Limpia el src inmediatamente para pausar el video
+  document.body.style.overflow = ''; // Reactiva el scroll de la página
+});
+
+// Cerrar modal al hacer clic fuera del contenido
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('show'); // Elimina la clase para ocultar el modal
+    videoFrame.src = ''; // Limpia el src inmediatamente para pausar el video
+    document.body.style.overflow = ''; // Reactiva el scroll de la página
+  }
+});
   
-  window.addEventListener('load', () => {
-    const videoSection = document.querySelector('.video-section');
-    videoSection.classList.add('fade-in');
-  });
+// Animación de entrada para la sección principal
+
+window.addEventListener('load', () => {
+  const videoSection = document.querySelector('.video-section');
+  videoSection.classList.add('fade-in');
+});
+
+// Animación de entrada para la sección de preProductos
 
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
@@ -46,6 +82,8 @@ window.addEventListener('scroll', () => {
     preProductosP.classList.add('fade-in'); 
   }
 });
+
+//particulas js del fondo
 
 particlesJS('particles-js', {
     "particles": {

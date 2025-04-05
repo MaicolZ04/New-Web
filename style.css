@@ -12,7 +12,7 @@
   padding: 15px 40px;
   background-color: transparent;
   position: relative;
-  z-index: 2
+  z-index: 100;
 }
 
 body {
@@ -153,7 +153,7 @@ p {
 .video-section {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding-top: 120px;
     margin-bottom: 340px;
@@ -166,6 +166,7 @@ p {
     height: 500px;
     z-index: 1;
     flex-direction: row-reverse;
+    flex-wrap: wrap;
 }
 
 .video-section.fade-in {
@@ -393,6 +394,13 @@ p {
     margin-top: 80px;
 }
 
+  .video-frame {
+    width: 100%; 
+    height: 250px; 
+    border-radius: 8px;
+    margin: 0 auto; 
+}
+
   .preProductos {
     margin-top: 200px;
   }
@@ -571,4 +579,157 @@ p {
 }
 body.menu-open .btn-empezar-mobile {
   display: none;
+}
+
+/* Estilos para el botón del video */
+.video-btn {
+  background-color: #1481e7;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  font-family: "Space Grotesk";
+  border: 1px solid black;
+  margin-left: 90px;
+}
+
+.video-btn:hover {
+  background-color: #051d33;
+  color: #1481e7;
+}
+
+/* Estilos para el modal */
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Soporte para Safari */
+  z-index: 9999;
+  opacity: 0; /* Ocultar inicialmente */
+  visibility: hidden; /* Ocultar inicialmente */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1; /* Mostrar modal */
+  visibility: visible; /* Hacer visible */
+}
+
+.modal-container {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: 5vh auto;
+  background: #111; /* Fondo sólido */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeInScale 0.4s ease;
+}
+
+.video-frame {
+  width: 90%; /* Aumentar el ancho al 90% del contenedor */
+  height: 400px; /* Aumentar la altura */
+  border-radius: 8px;
+  border: none;
+  margin: 0 auto; /* Centrar el iframe */
+  display: block; /* Asegurarse de que el iframe sea un bloque para centrarlo */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efecto vidrio mate */
+.glass-modal {
+  width: 80%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  overflow: hidden;
+}
+
+.video-container {
+  padding: 20px;
+  background: #000; /* Fondo negro para el video */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  border: none;
+}
+
+.modal-header {
+  padding: 18px 25px;
+  background: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.close-modal {
+  background: #333;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.close-modal:hover {
+  background: #555;
+  transform: rotate(90deg);
+}
+
+.modal-content {
+  padding: 30px;
+  min-height: 300px;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .glass-modal {
+    width: 95%;
+  }
 }
