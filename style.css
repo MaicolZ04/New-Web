@@ -153,9 +153,9 @@ p {
 .video-section {
     position: relative;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding-top: 120px;
+    padding-top: 50px;
     margin-bottom: 340px;
     padding-left: 40px;
     background-color: transparent;
@@ -177,9 +177,28 @@ p {
 .content-left {
     width: 45%; 
     text-align: left;
-    padding-left: 90px;
+    padding-left: 50px;
     margin-top: 30px;
+    flex: 1;
+    padding-bottom: 50px;
 }
+
+.content-right {
+  flex: 1; /* Ocupa el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+}
+
+.content-right img {
+  max-width: 100%; 
+  max-height: 700px; 
+  height: auto; 
+  display: block; 
+  animation: float 6s ease-in-out infinite;
+}
+
+
 
 .section-title {
     font-size: 4rem;
@@ -307,7 +326,7 @@ p {
     display: flex;
     justify-content: space-around;
     align-items: center; 
-    padding: 60px  50px; 
+    padding: 100px  50px; 
     background-color: #0044cc;
     z-index: 1;
     color: white;
@@ -540,7 +559,7 @@ p {
     opacity: 1; 
     transform: none; 
     margin: 0 15px; 
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 }
 
@@ -576,15 +595,27 @@ p {
   .btn-empezar-mobile {
     display: block; /* Mostrar el botón en móviles */
   }
-}
-body.menu-open .btn-empezar-mobile {
-  display: none;
+  .video-btn {
+    margin-left: unset !important; /* Elimina el margen izquierdo */
+    margin-right: unset !important; /* Asegúrate de que no haya margen derecho */
+    margin: 20px auto !important; /* Centra el botón horizontalmente */
+    display: block !important; /* Asegúrate de que sea un bloque para centrar */
+  }
+  .btn-empezar {
+    display: none;
+  }
+  .video-section {
+    margin-bottom: 0; /* Elimina el margen inferior en móviles */
+    margin-top: 0; /* Elimina el margen superior en móviles */
+  }
 }
 
 /* Estilos para el botón del video */
 .video-btn {
   background-color: #1481e7;
-  color: white;
+  display: inline-block;
+  margin-top: 20px;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
@@ -594,7 +625,7 @@ body.menu-open .btn-empezar-mobile {
   transition: background-color 0.3s;
   font-family: "Space Grotesk";
   border: 1px solid black;
-  margin-left: 90px;
+  font-style: bold;
 }
 
 .video-btn:hover {
@@ -732,4 +763,473 @@ body.menu-open .btn-empezar-mobile {
   .glass-modal {
     width: 95%;
   }
+}
+
+/* Services Section */
+.services {
+  background-color: white;
+  padding: 100px 0;
+  margin: 0px auto;
+  position: relative;
+  z-index: 2;
+  padding-top: 150px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  position: relative;
+  display: inline-block;
+}
+
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover .service-icon i {
+  color: white;
+}
+
+.service-card:hover h3 {
+  color: white;
+}
+
+.service-card:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.service-card:hover .service-link {
+  color: white;
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon i {
+  font-size: 1.8rem;
+  color: #2563eb;
+  transition: color 0.3s ease;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.service-card p {
+  margin-bottom: 20px;
+  color: #6b7280;
+  transition: color 0.3s ease;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.service-link i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  
+  .services {
+    padding: 50px 10px; /* Reduce el padding en pantallas pequeñas */
+    margin: 0;
+  }
+
+  .service-card {
+      padding: 20px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    gap: 20px; /* Reduce el espacio entre las tarjetas */
+  }
+
+  .service-card {
+    padding: 15px; /* Reduce el padding interno */
+  }
+}
+
+/* Licencias venta */
+.licencias-section {
+  position: relative;
+  padding: 4rem 1rem;
+  background: #ffffff;
+  z-index: 2;
+}
+
+.licencias-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subtitulo {
+  color: #6c757d;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.licencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.licencia-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.licencia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.destacada {
+  border: 2px solid #2563eb;
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.licencia-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.licencia-header h3 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.precio span {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.caracteristicas {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.caracteristicas li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #475569;
+}
+
+.caracteristicas .fa-check {
+  color: #2563eb;
+}
+
+.caracteristicas .fa-times {
+  color: #94a3b8;
+}
+
+.btn-licencia {
+  width: 100%;
+  padding: 1rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-licencia:hover {
+  background: #1d4ed8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .destacada {
+      transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .licencias-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 20px;
+  }
+  
+  .licencia-card {
+      padding: 15px;
+  }
+  
+  .precio {
+      font-size: 2rem;
+  }
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  background-color: rgb(1, 1, 96);
+  color: white;
+  padding: 80px;
+  z-index: 2;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-about h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding-right: 20px;
+}
+
+.container {
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 0 20px; /* Agrega un padding para evitar que el contenido toque los bordes */
+  max-width: 1200px; /* Limita el ancho máximo */
+}
+
+.footer-about p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background-color: rgb(52, 52, 191);
+  transform: translateY(-5px);
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-links h3::after,
+.footer-contact h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: rgb(52, 52, 191);
+}
+
+.footer-links ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: rgb(52, 52, 191);
+  padding-left: 5px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  color: rgb(52, 52, 191);
+  width: 20px;
+  text-align: center;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 50px 10px; /* Reduce el padding en pantallas pequeñas */
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    gap: 20px; /* Reduce el espacio entre las secciones */
+  }
+}
+
+/* Modal para las tarjetas de servicio */
+.service-modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.service-modal.show {
+  display: flex; /* Muestra el modal */
+}
+
+.service-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.close-service-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-service-modal:hover {
+  color: red;
 }
